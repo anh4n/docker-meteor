@@ -1,4 +1,4 @@
-FROM node:0.10.43
+FROM node:4.5.0
 
 RUN apt-get -yqq update \
     && DEBIAN_FRONTEND=noninteractive apt-get -yqq install curl g++ make \
