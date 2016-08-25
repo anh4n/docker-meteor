@@ -14,7 +14,7 @@ Sometimes `meteor build` get stuck at downloading `meteor-tools`. If this happen
 
 ## Example Dockerfile of your meteor app
 
-    FROM node:0.10.43
+    FROM node:4.5.0
 
     ENV ROOT_URL http://localhost
     ENV PORT 3000
