@@ -6,6 +6,8 @@ RUN apt-get -yqq update \
 
 RUN curl https://install.meteor.com/ | /bin/sh
 
+ENV LC_ALL=POSIX
+
 WORKDIR /app
 
 VOLUME ["/app"]
