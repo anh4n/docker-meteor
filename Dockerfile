@@ -7,12 +7,8 @@ RUN apt-get -yqq update \
 RUN curl https://install.meteor.com/ | /bin/sh
 
 ENV LC_ALL=POSIX
+ENV METEOR_ALLOW_SUPERUSER=1
 
-RUN useradd -m meteor \
-    && mkdir /app \
-    && chown meteor /app
-
-USER meteor
 RUN meteor --version
 
 WORKDIR /app
