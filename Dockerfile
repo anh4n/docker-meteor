@@ -1,4 +1,4 @@
-FROM node:4.6.1
+FROM node:4.6.1-slim
 
 RUN apt-get -yqq update \
     && DEBIAN_FRONTEND=noninteractive apt-get -yqq install curl g++ make \
