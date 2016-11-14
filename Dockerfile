@@ -8,6 +8,13 @@ RUN curl https://install.meteor.com/ | /bin/sh
 
 ENV LC_ALL=POSIX
 
+RUN useradd -m meteor \
+    && mkdir /app \
+    && chown meteor /app
+
+USER meteor
+RUN meteor --version
+
 WORKDIR /app
 
 VOLUME ["/app"]
