@@ -1,20 +1,34 @@
 # docker-meteor
 
-Production Dockerimage with Meteor
+Dockerimage with Meteor
 
-## Building your Meteor app
+## Development
+
+### Example docker-compose.yml configuration
+
+    version: '2'
+
+    services:
+        my_service:
+            image: anh4n/meteor
+            ports:
+                - "3000:3000"
+            volumes:
+                - ./:/app
+            environment:
+                - MONGO_URL=mongodb://example.com:27017/mycollection
+
+## Production
+
+### Building your Meteor app
 
 Run the following command in the root directory of your meteor app, to build and generate an archive:
 
     docker run --rm -v $(pwd):/app anh4n/meteor build /app
 
-Sometimes `meteor build` get stuck at downloading `meteor-tools`. If this happen, you can try the following command, to build your app, which helped me:
+### Example Dockerfile of your meteor app
 
-    docker run --rm -v $(pwd):/app --add-host warehouse.meteor.com:54.192.225.217 anh4n/meteor build /app
-
-## Example Dockerfile of your meteor app
-
-    FROM node:4.5.0
+    FROM node:4.6.2-slim
 
     ENV ROOT_URL http://localhost
     ENV PORT 3000
@@ -30,7 +44,7 @@ Sometimes `meteor build` get stuck at downloading `meteor-tools`. If this happen
 
     CMD [ "node", "/app/bundle/main.js" ]
 
-## Example docker-compose.yml configuration
+### Example docker-compose.yml configuration
 
     version: '2'
 
