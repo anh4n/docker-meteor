@@ -1,5 +1,6 @@
 FROM node:4.6.2-slim
 
+ENV METEOR_VERSION=1.4.2.3
 ENV LC_ALL=POSIX
 
 RUN apt-get -yqq update \
@@ -11,7 +12,7 @@ RUN apt-get -yqq update \
 
 USER node
 
-RUN curl "https://install.meteor.com/" | /bin/sh
+RUN curl "https://install.meteor.com/?release=${METEOR_VERSION}" | /bin/sh
 
 ENV PATH=$PATH:/home/node/.meteor
 
