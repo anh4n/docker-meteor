@@ -1,4 +1,4 @@
-FROM node:4.6.2-slim
+FROM node:4.6.2
 
 ENV LC_ALL=POSIX
 
