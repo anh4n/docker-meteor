@@ -1,4 +1,4 @@
-FROM node:4.6.2-slim
+FROM node:4.6.2
 
 ENV METEOR_VERSION=1.4.2.3
 ENV LC_ALL=POSIX
