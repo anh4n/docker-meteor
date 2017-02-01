@@ -1,6 +1,7 @@
 FROM node:4.6.2
 
 ENV LC_ALL=POSIX
+ENV METEOR_ALLOW_SUPERUSER=1
 
 RUN apt-get -yqq update \
     && DEBIAN_FRONTEND=noninteractive apt-get -yqq install \
@@ -9,11 +10,9 @@ RUN apt-get -yqq update \
         make \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-USER node
-
 RUN curl "https://install.meteor.com/" | /bin/sh
 
-ENV PATH=$PATH:/home/node/.meteor
+ENV PATH=$PATH:/root/.meteor
 
 WORKDIR /app
 
