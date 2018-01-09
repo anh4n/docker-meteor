@@ -1,6 +1,6 @@
-FROM node:4.8.4
+FROM node:8.8.1
 
-ENV METEOR_VERSION=1.5.1
+ENV METEOR_VERSION=1.6.0.1
 ENV LC_ALL=POSIX
 
 RUN apt-get -yqq update \
