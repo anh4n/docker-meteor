@@ -11,9 +11,7 @@ RUN apt-get -yqq update \
         make \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN curl "https://install.meteor.com/?release=${METEOR_VERSION}" | /bin/sh
-
-ENV PATH=$PATH:/root/.meteor
+RUN curl "https://install.meteor.com/?release=${METEOR_VERSION}" | sh
 
 WORKDIR /app
 
