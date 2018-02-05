@@ -15,4 +15,6 @@ RUN curl "https://install.meteor.com/?release=${METEOR_VERSION}" | sh
 
 WORKDIR /app
 
+EXPOSE 3000
+
 ENTRYPOINT ["meteor"]
