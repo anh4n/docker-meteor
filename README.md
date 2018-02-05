@@ -28,7 +28,7 @@ Run the following command in the root directory of your meteor app, to build and
 
 ### Example Dockerfile of your meteor app
 
-    FROM node:4.6.2-slim
+    FROM node:8.9.4
 
     ENV ROOT_URL http://localhost
     ENV PORT 3000
